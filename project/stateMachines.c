@@ -32,7 +32,7 @@ char toggle_green()	/* only toggle green if red is on!  */
     else dont do any noise 
    */
   if(green_on && red_on){
-    buzzer_set_period(500);
+    buzzer_set_period(1000);
   }
   else{
     buzzer_set_period(0);
