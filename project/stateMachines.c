@@ -27,10 +27,10 @@ char toggle_green()	/* only toggle green if red is on!  */
     green_on ^= 1;
     changed = 1;
   }
-  /*
-    If green light is on make noise in a period of 1000
-    else dont do any noise 
-   */
+  
+  //If green light is on make noise in a period of 1000
+  // else dont do any noise 
+   
   if(green_on && red_on){
     buzzer_set_period(1000);
   }
@@ -40,6 +40,8 @@ char toggle_green()	/* only toggle green if red is on!  */
  
   return changed;
 }
+  
+
 
 
 void state_advance()		/* alternate between toggling red & green */
