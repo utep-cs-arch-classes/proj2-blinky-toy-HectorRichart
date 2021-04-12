@@ -31,24 +31,24 @@ void
 switch_interrupt_handler()
 {
   char p2val = switch_update_interrupt_sense();
-  switch_state_down = (p2val & SW1) ? 0 : 1; /* 0 when SW1 is up */
-  switch_state_changed = 1;
+  // switch_state_down = (p2val & SW1) ? 0 : 1; /* 0 when SW1 is up */
+  // switch_state_changed = 1;
   //  led_update();
-  if(!(p2val & SW0) && (p2val & SW1) && (p2val & SW2) && (p2val & SW3)){
+  if((p2val & SW0) && (p2val & SW1) && (p2val & SW2) && (p2val & SW3)){
    buzzer_set_period(0);
    switch_state_down = 0;
-   green_on = 0;
-   red_on = 0;
    }
-  else if(!(p2val & SW0)){
-    enableWDTInterrupts();
-     if(green_on & red_on){
-      buzzer_set_period(500);
-      red_on = 1;
-      green_on = 1;
-       }
+  else if(p2val & SW0){
+    switch_state_down = 1;
+    //       police_car();
+  
   }
-
+  // switch_state_changed = 1;
+  else if(p2val & SW1){
+    switch_state_down=1;
+    buzzer_set_period(500);
+  }
+  switch_state_changed =1;
 }
 
     

@@ -39,15 +39,12 @@ void led_update()
   }
   switch_state_changed = 0;
   
-
-  
-  //  if green is off we turn red on to have both on   
+  // if green is off we turn red on to have both on   
   if(!green_on){
     red_on = 1;
     buzzer_set_period(500);
     led_changed = 1;
   }
-  
   
 }
 

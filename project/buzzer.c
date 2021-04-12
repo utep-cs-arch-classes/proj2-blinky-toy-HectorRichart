@@ -1,6 +1,8 @@
 #include <msp430.h>
 #include "libTimer.h"
 #include "buzzer.h"
+#include "led.h"
+
 
 void buzzer_init()
 {
@@ -23,9 +25,23 @@ void buzzer_set_period(short cycles) /* buzzer clock = 2MHz.  (period of 1k resu
   CCR0 = cycles; 
   CCR1 = cycles >> 1;		/* one half cycle */
 }
+/*
+void police_car(){
+  if(green_on && red_on){
+    buzzer_set_period(1000);
+     }
+     else{
+    buzzer_set_period(500);
+    }
+      
+ if(!green_on){
+    red_on = 1;
+    buzzer_set_period(500);
+    led_changed = 1;
+  }
+   */
 
 
-    
     
   
 
