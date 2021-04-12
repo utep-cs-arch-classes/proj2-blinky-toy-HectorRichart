@@ -10,6 +10,8 @@ This toy simulates a police car siren.
 
 **To run the toy** ->make load
 
+**Green board buttons** -> Press any of the buttons to restart led and sound
+
 
 
 
